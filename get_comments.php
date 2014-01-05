@@ -111,9 +111,10 @@
 			
 		<div style="text-align: center;">
 <?php
-	require_once('engine.php');
-	
-    session_start();
+     ob_start();
+     require_once('engine.php');
+     session_start();
+     
 	$_SESSION['request_id']=generateId('rq');
 	$_SESSION['type']='spice';
 	//$con=mysqli_connect("localhost","root","","sentimento");
@@ -166,15 +167,11 @@
 	if(mysqli_affected_rows( $con )!=0){
 		mysqli_close($con);
 		engine($result,'spice');
-		
-		header("Location: result.php");
+		header("Location: http://sentimentos.cloudcontrolled.com/result.php");
 		exit();
 	}else{
 		echo "The message does not have any comments";
 	}
-	
-	
-	
 ?>
 <div>
 	<a href="get_messages.php">Choose Another Message</a>
