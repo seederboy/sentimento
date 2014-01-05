@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require('php-excel-reader/excel_reader2.php');
 require('SpreadsheetReader.php');
 require_once('engine.php');
@@ -51,6 +52,6 @@ try
 		echo $E -> getMessage();
 }
 
-header("Location: result.php");
+header("Location: http://sentimentos.cloudcontrolled.com/result.php");
 exit();
 ?>
