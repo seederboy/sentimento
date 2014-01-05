@@ -168,6 +168,7 @@
 		engine($result,'spice');
 		
 		header("Location: result.php");
+		exit();
 	}else{
 		echo "The message does not have any comments";
 	}
