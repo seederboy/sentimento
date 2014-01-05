@@ -52,6 +52,5 @@ try
 }
 
 header("Location: result.php");
-
-
+exit();
 ?>
