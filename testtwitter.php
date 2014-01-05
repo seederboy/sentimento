@@ -1,5 +1,6 @@
 <?php
-	require_once('TwitterAPIExchange.php');
+    ob_start();
+    require_once('TwitterAPIExchange.php');
     require_once('engine.php');
     $settings = array(
 	    'oauth_access_token' => "86331448-LW6zu086VLfB3HHNtFDGZhYyF2nhrhaC02kFw2viT",
@@ -96,6 +97,6 @@
 	$result = mysqli_query($con,"SELECT * FROM twitter_input where request_id='".$_SESSION['request_id']."';");
 	mysqli_close($con);
 	engine($result,'twitter');
-	header("Location: result.php");
+	header("Location: http://sentimentos.cloudcontrolled.com/result.php");
 	exit();
 ?>
