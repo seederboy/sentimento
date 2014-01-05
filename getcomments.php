@@ -167,6 +167,7 @@
 		mysqli_close($con);
 		engine($result,'fb');
 		header("Location: result.php");
+		exit();
 	}else{
 		echo "The post does not have any comments";
 	}
