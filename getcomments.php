@@ -111,6 +111,7 @@
 			
 		<div style="text-align: center;">
 <?php
+        ob_start();
 	require_once("facebook.php");
 	require_once('engine.php');
 	session_start();
@@ -166,7 +167,7 @@
 	 if(mysqli_affected_rows( $con )!=0){
 		mysqli_close($con);
 		engine($result,'fb');
-		header("Location: result.php");
+		header("Location: http://sentimentos.cloudcontrolled.com/result.php");
 		exit();
 	}else{
 		echo "The post does not have any comments";
@@ -181,7 +182,5 @@
 	echo "<div>
 	<a href='facetest.php?page=".$page."'>Choose Another Message</a>
 </div>";
-	
-  ?>
-  
-  </div></div></body></html>
+?>
+</div></div></body></html>
