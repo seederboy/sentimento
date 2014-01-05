@@ -96,7 +96,6 @@
 	$result = mysqli_query($con,"SELECT * FROM twitter_input where request_id='".$_SESSION['request_id']."';");
 	mysqli_close($con);
 	engine($result,'twitter');
-	
 	header("Location: result.php");
-	 
+	exit();
 ?>
